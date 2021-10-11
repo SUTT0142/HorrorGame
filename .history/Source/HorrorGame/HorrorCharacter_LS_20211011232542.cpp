@@ -36,18 +36,18 @@ void AHorrorCharacter_LS::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	// Set up "movement" bindings.
-	PlayerInputComponent->BindAxis("MoveForward", this, &AHorrorCharacter_LS::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AHorrorCharacter_LS::MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &AFPSCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AFPSCharacter::MoveRight);
 }
 
-void AHorrorCharacter_LS::MoveForward(float Value)
+void AFPSCharacter::MoveForward(float Value)
 {
     // Find out which way is "forward" and record that the player wants to move that way.
     FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
     AddMovementInput(Direction, Value);
 }
 
-void AHorrorCharacter_LS::MoveRight(float Value)
+void AFPSCharacter::MoveRight(float Value)
 {
     // Find out which way is "right" and record that the player wants to move that way.
     FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
