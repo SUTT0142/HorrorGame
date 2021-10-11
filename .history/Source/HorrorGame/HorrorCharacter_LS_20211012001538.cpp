@@ -40,8 +40,8 @@ void AHorrorCharacter_LS::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	PlayerInputComponent->BindAxis("MoveRight", this, &AHorrorCharacter_LS::MoveRight);
 
 	// Set up "look" bindings.
-	PlayerInputComponent->BindAxis("Turn", this, &AHorrorCharacter_LS::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("LookUp", this, &AHorrorCharacter_LS::AddControllerPitchInput);
+	PlayerInputComponent->BindAxis(TEXT("Horizontal"),this,&AHorrorCharacter_LS::Turn);
+	PlayerInputComponent->BindAxis(TEXT("Vertical"),this,&AHorrorCharacter_LS::LookUp);
 }
 
 void AHorrorCharacter_LS::MoveForward(float Value)
@@ -56,4 +56,14 @@ void AHorrorCharacter_LS::MoveRight(float Value)
     // Find out which way is "right" and record that the player wants to move that way.
     FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
     AddMovementInput(Direction, Value);
+}
+
+void AHorrorCharacter_LS::Turn(float axisvalue)
+{
+    this->AddControllerYawInput(axisvalue);
+}
+
+void AHorrorCharacter_LS::LookUp(float axisvalue)
+{
+	this->AddControllerPitchInput(axisvalue);
 }

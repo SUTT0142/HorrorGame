@@ -57,3 +57,13 @@ void AHorrorCharacter_LS::MoveRight(float Value)
     FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
     AddMovementInput(Direction, Value);
 }
+
+void AHorrorCharacter_LS::Turn(float axisvalue)
+{
+    this->AddControllerYawInput(axisvalue);
+}
+
+void AHorrorCharacter_LS::Lookup(float axisvalue)
+{
+	this->AddControllerPitchInput(axisvalue);
+}
