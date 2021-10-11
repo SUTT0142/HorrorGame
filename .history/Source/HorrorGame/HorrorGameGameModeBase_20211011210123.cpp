@@ -3,7 +3,7 @@
 
 #include "HorrorGameGameModeBase.h"
 
-void AHorrorGameGameModeBase::StartPlay()
+void AFPSProjectGameModeBase::StartPlay()
 {
 Super::StartPlay();
 

@@ -14,5 +14,4 @@ class HORRORGAME_API AHorrorGameGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
-	virtual void StartPlay() override; // Allows you to override StartPlay to print a log message to screen when gameplay begins
 };
