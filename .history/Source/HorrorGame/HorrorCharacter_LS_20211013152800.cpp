@@ -62,12 +62,12 @@ void AHorrorCharacter_LS::MoveRight(float Value)
     AddMovementInput(Direction, Value);
 }
 
-void AHorrorCharacter_LS::StartJump()
+void AFPSCharacter::StartJump()
 {
     bPressedJump = true;
 }
 
-void AHorrorCharacter_LS::StopJump()
+void AFPSCharacter::StopJump()
 {
     bPressedJump = false;
 }

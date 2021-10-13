@@ -44,8 +44,8 @@ void AHorrorCharacter_LS::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	PlayerInputComponent->BindAxis("LookUp", this, &AHorrorCharacter_LS::AddControllerPitchInput);
 
 	// Set up "action" bindings.
-	PlayerInputComponent->BindAction("Jump",IE_Pressed,this,&AHorrorCharacter_LS::StartJump);
-    PlayerInputComponent->BindAction("Jump",IE_Released,this,&AHorrorCharacter_LS::StopJump);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AFPSCharacter::StartJump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AFPSCharacter::StopJump);
 }
 
 void AHorrorCharacter_LS::MoveForward(float Value)

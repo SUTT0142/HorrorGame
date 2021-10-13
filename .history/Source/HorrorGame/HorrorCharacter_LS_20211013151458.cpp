@@ -44,8 +44,8 @@ void AHorrorCharacter_LS::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	PlayerInputComponent->BindAxis("LookUp", this, &AHorrorCharacter_LS::AddControllerPitchInput);
 
 	// Set up "action" bindings.
-	PlayerInputComponent->BindAction("Jump",IE_Pressed,this,&AHorrorCharacter_LS::StartJump);
-    PlayerInputComponent->BindAction("Jump",IE_Released,this,&AHorrorCharacter_LS::StopJump);
+	PlayerInputComponent->BindAction("Jump",IE_Pressed,this,&AHorrorCharacter_LS::Jump);
+    PlayerInputComponent->BindAction("Jump",IE_Released,this,&AHorrorCharacter_LS::StopJumping);
 }
 
 void AHorrorCharacter_LS::MoveForward(float Value)
@@ -60,14 +60,4 @@ void AHorrorCharacter_LS::MoveRight(float Value)
     // Find out which way is "right" and record that the player wants to move that way.
     FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
     AddMovementInput(Direction, Value);
-}
-
-void AHorrorCharacter_LS::StartJump()
-{
-    bPressedJump = true;
-}
-
-void AHorrorCharacter_LS::StopJump()
-{
-    bPressedJump = false;
 }

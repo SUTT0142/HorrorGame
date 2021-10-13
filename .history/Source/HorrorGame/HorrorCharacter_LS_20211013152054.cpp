@@ -61,13 +61,3 @@ void AHorrorCharacter_LS::MoveRight(float Value)
     FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
     AddMovementInput(Direction, Value);
 }
-
-void AHorrorCharacter_LS::StartJump()
-{
-    bPressedJump = true;
-}
-
-void AHorrorCharacter_LS::StopJump()
-{
-    bPressedJump = false;
-}
