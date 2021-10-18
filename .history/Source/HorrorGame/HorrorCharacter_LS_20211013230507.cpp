@@ -17,7 +17,7 @@ AHorrorCharacter_LS::AHorrorCharacter_LS()
 	FPCameraComponent->SetupAttachment(CastChecked<USceneComponent, UCapsuleComponent>(GetCapsuleComponent()));
 
 	// Position the camera slightly above the eyes.
-	FPCameraComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 50.0f + BaseEyeHeight));
+	FPCameraComponent->SetRelativeLocation(FVector(BaseEyeHeight));
 
 	// Enable the pawn to control camera rotation.
 	FPCameraComponent->bUsePawnControlRotation = true;
