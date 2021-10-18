@@ -9,18 +9,6 @@ AHorrorCharacter_LS::AHorrorCharacter_LS()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	// Create a first person camera component.
-	FPCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
-	check(FPCameraComponent != nullptr);
-
-	// Attach the camera component to our capsule component.
-	FPCameraComponent->SetupAttachment(CastChecked<USceneComponent, UCapsuleComponent>(GetCapsuleComponent()));
-
-	// Position the camera slightly above the eyes.
-	FPCameraComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 50.0f + BaseEyeHeight));
-
-	// Enable the pawn to control camera rotation.
-	FPCameraComponent->bUsePawnControlRotation = true;
 }
 
 // Called when the game starts or when spawned

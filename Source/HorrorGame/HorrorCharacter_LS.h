@@ -4,10 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Camera/CameraComponent.h"
-#include "Components/CapsuleComponent.h"
 #include "HorrorCharacter_LS.generated.h"
-
 
 UCLASS()
 class HORRORGAME_API AHorrorCharacter_LS : public ACharacter
@@ -44,8 +41,4 @@ public:
 	// Clears jump flag when key is released.
 	UFUNCTION()
 	void StopJump();
-
-	// FP camera.
-	UPROPERTY(VisibleAnywhere)
-	UCameraComponent* FPCameraComponent;
 };
